@@ -20,5 +20,7 @@
   "description": "Omschrijving",
   "allMedia": "Alle media",
   "readMore": "Lees meer...",
-  "readLess": "Lees minder..."
+  "readLess": "Lees minder...",
+  "error": "Error",
+  "errorNotFound": "Dit huis konden we helaas niet vinden"
 }

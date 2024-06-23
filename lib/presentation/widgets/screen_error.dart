@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:funda/core/app_exception.dart';
+import 'package:funda/core/helpers.dart';
+import 'package:funda/core/styles.dart';
 
 class ScreenError extends StatelessWidget {
-  final String text;
-  const ScreenError(this.text, {super.key});
+  final AppException appException;
+  const ScreenError(this.appException, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(text, style: const TextStyle(color: Colors.red)),
+      child: Padding(
+        padding: const EdgeInsets.all(Styles.paddingNormal),
+        child: Text(
+            appException.message.isNotEmpty
+                ? appException.message
+                : (appException.code == 404
+                    ? myLoc(context).errorNotFound
+                    : myLoc(context).error),
+            style: const TextStyle(color: Colors.red)),
+      ),
     );
   }
 }

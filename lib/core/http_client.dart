@@ -10,17 +10,11 @@ class HttpClient {
   }
 
   Future<Map<String, dynamic>> get(String uri) async {
-    try {
-      final response = await http.get(_getUri(uri));
-      if (response.statusCode == 200) {
-        throw AppException(message: response.body, code: response.statusCode);
-        return convert.json.decode(response.body) as Map<String, dynamic>;
-      } else {
-        throw AppException(message: response.body, code: response.statusCode);
-      }
-    } catch (ex) {
-      throw AppException(
-          message: ex.toString(), code: Constants.errorCodeUnknown);
+    final response = await http.get(_getUri(uri));
+    if (response.statusCode == 200) {
+      return convert.json.decode(response.body) as Map<String, dynamic>;
+    } else {
+      throw AppException(message: response.body, code: response.statusCode);
     }
   }
 }

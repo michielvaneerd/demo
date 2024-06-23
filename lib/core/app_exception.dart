@@ -8,7 +8,9 @@ class AppException extends Equatable implements Exception {
   const AppException({required this.message, required this.code});
 
   factory AppException.fromException(Exception ex) {
-    if (ex is AppException) return ex;
+    if (ex is AppException) {
+      return ex;
+    }
     return AppException(
         message: kDebugMode ? ex.toString() : 'An error occurred',
         code: Constants.errorCodeUnknown);

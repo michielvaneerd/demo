@@ -33,6 +33,15 @@ class HouseDatasourceImpl implements HouseDatasource {
           place: 'Nijmegen',
           zipCode: '6534XS',
           price: 325000),
+      const ListHouseModel(
+          id: 'cf1140e3-9999-9999-9999-93593fe99747',
+          offeredSince: '13 juni 2024',
+          addess: 'Niet bestaand huis',
+          mainPhoto:
+              'http://cloud.funda.nl/valentina_media/999/999/999_groot.jpg',
+          place: 'Nijmegen',
+          zipCode: '6534XS',
+          price: 325000),
     ];
   }
 }

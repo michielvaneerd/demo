@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
 
   Widget _getWidget(MainScreenState state) {
     if (state is MainScreenStateError) {
-      return ScreenError(state.appException.message);
+      return ScreenError(state.appException);
     } else if (state is MainScreenStateSuccess) {
       return _getHousesWidget(state.houses);
     } else {
@@ -35,7 +35,12 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.network(house.mainPhoto),
+                  Image.network(
+                    house.mainPhoto,
+                    fit: BoxFit.fill,
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Placeholder(),
+                  ),
                   TextRow(text: house.addess),
                   TextRow(
                       text: formatPrice(house.price),
@@ -46,7 +51,7 @@ class MainScreen extends StatelessWidget {
             ),
           ),
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => HouseScreen(houseId: house.id),
+            builder: (context) => HouseScreen(listHouseEntity: house),
           )),
         );
       },
