@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:funda/domain/entities/list_house_entity.dart';
 import 'package:xml/xml.dart';
 
+/// House model that used in the list of houses
 class ListHouseModel extends Equatable {
   final String id;
   final String offeredSince;

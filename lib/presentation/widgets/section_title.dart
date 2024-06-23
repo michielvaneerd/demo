@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:funda/core/styles.dart';
 
+/// Header widget
 class SectionTitle extends StatelessWidget {
   final String text;
   const SectionTitle({required this.text, super.key});

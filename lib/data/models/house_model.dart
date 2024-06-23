@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:funda/domain/entities/house_entity.dart';
 
+/// House model
 class HouseModel extends Equatable {
   final String offeredSince;
   final int numberOfRooms;

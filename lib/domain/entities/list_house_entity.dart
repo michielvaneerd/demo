@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+/// A simple House entity that is used in the list of houses
 class ListHouseEntity extends Equatable {
   final String id;
   final String offeredSince;

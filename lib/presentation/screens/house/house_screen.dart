@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:funda/core/constants.dart';
 import 'package:funda/core/helpers.dart';
 import 'package:funda/core/injections.dart';
 import 'package:funda/core/styles.dart';
@@ -12,6 +13,7 @@ import 'package:funda/presentation/widgets/section_title.dart';
 import 'package:funda/presentation/widgets/text_row.dart';
 import 'package:funda/presentation/widgets/text_row_expandable.dart';
 
+/// Screen that displays the details of a house
 class HouseScreen extends StatefulWidget {
   final ListHouseEntity listHouseEntity;
   const HouseScreen({required this.listHouseEntity, super.key});
@@ -93,6 +95,17 @@ class _HouseScreenState extends State<HouseScreen> {
               text: myLoc(context).surfaceWithValue(house.surface),
               fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
             ),
+            const Padding(
+              padding: EdgeInsets.only(left: Styles.paddingNormal),
+            ),
+            Icon(
+              Icons.construction,
+              color: Theme.of(context).colorScheme.secondaryFixed,
+            ),
+            TextRow(
+              text: house.constructionYear,
+              fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize,
+            ),
           ],
         ),
         Row(
@@ -122,6 +135,7 @@ class _HouseScreenState extends State<HouseScreen> {
             } else {
               // Animate a scroll will trigger the scrollController listener,
               // which will correctly update the showTitle flag.
+              // If we don't do this, the title can be visible in the FlexibleSpaceBar.
               _scrollController.animateTo(readMoreOffset,
                   duration: const Duration(milliseconds: 300),
                   curve: Curves.easeIn);
@@ -145,7 +159,6 @@ class _HouseScreenState extends State<HouseScreen> {
               slivers: [
                 SliverAppBar(
                   expandedHeight: expandedHeight,
-                  //floating: false,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     title:

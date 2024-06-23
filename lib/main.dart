@@ -13,15 +13,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Funda demo app',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      //theme: const MaterialTheme(TextTheme()).light(),
-      //darkTheme: const MaterialTheme(TextTheme()).dark(),
       home: BlocProvider(
         create: (context) =>
             MainScreenCubit(Injections.houseUseCases)..getHouses(),

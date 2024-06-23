@@ -8,6 +8,7 @@ import 'package:funda/presentation/screens/main/main_screen_cubit.dart';
 import 'package:funda/presentation/widgets/screen_error.dart';
 import 'package:funda/presentation/widgets/text_row.dart';
 
+/// Screen that displays a list of houses
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
@@ -29,7 +30,6 @@ class MainScreen extends StatelessWidget {
         return ListTile(
           contentPadding: EdgeInsets.zero,
           title: Card(
-            //shape: ShapeBorder.,
             child: Padding(
               padding: const EdgeInsets.all(Styles.paddingSmall),
               child: Column(

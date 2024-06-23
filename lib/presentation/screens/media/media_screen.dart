@@ -3,6 +3,7 @@ import 'package:funda/core/helpers.dart';
 import 'package:funda/domain/entities/house_entity.dart';
 import 'package:funda/presentation/screens/media/photo_screen.dart';
 
+/// Screen that displays all photos from a house.
 class MediaScreen extends StatelessWidget {
   final HouseEntity _house;
   const MediaScreen(this._house, {super.key});

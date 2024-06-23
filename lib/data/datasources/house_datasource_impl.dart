@@ -4,6 +4,8 @@ import 'package:funda/data/models/house_model.dart';
 import 'package:funda/data/models/list_house_model.dart';
 import 'package:xml/xml.dart';
 
+/// Concrete House datasource, used to get objects from the HttpClient
+/// and return them to the data layer repositories.
 class HouseDatasourceImpl implements HouseDatasource {
   final HttpClient _httpClient;
   const HouseDatasourceImpl(this._httpClient);

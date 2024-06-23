@@ -23,5 +23,6 @@
   "readLess": "Lees minder...",
   "error": "Error",
   "errorNotFound": "Dit huis konden we helaas niet vinden",
-  "noConnectionError": "We kunnen helaas niets tonen, want er is op dit moment geen internet connectie"
+  "noConnectionError": "We kunnen helaas niets tonen, want er is op dit moment geen internet connectie",
+  "missingApiKey": "Please add your API_KEY to the dart define when running this app"
 }

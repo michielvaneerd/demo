@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:funda/core/styles.dart';
 
+/// Basic text widget
 class TextRow extends StatelessWidget {
   final String text;
   final Color? color;

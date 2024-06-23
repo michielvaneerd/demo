@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+/// A House entity
 class HouseEntity extends Equatable {
   final String offeredSince;
   final int numberOfRooms;

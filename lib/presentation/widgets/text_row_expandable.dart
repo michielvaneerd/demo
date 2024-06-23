@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:funda/core/helpers.dart';
 import 'package:funda/core/styles.dart';
 
+/// Text widget that can be expanded and collapsed.
+/// Displays the first paragraph when collapsed.
 class TextRowExpandable extends StatefulWidget {
   final String text;
   final Color? color;

@@ -4,6 +4,7 @@ import 'package:funda/core/constants.dart';
 import 'package:funda/core/helpers.dart';
 import 'package:funda/core/styles.dart';
 
+/// Widget that displays an error
 class ScreenError extends StatelessWidget {
   final AppException appException;
   const ScreenError(this.appException, {super.key});
@@ -14,6 +15,8 @@ class ScreenError extends StatelessWidget {
         return myLoc(context).noConnectionError;
       case Constants.errorCodeNotFound:
         return myLoc(context).errorNotFound;
+      case Constants.errorCodeMissingApiKey:
+        return myLoc(context).missingApiKey;
       default:
         return appException.message.isNotEmpty
             ? appException.message
@@ -27,7 +30,11 @@ class ScreenError extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(Styles.paddingNormal),
         child: Text(_getMessage(context),
-            style: const TextStyle(color: Colors.red)),
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Colors.red)),
       ),
     );
   }

@@ -34,6 +34,12 @@ class MainScreenCubit extends Cubit<MainScreenState> {
   MainScreenCubit(this._houseUseCases) : super(MainSCreenStateInitial());
 
   void getHouses() async {
+    if (Constants.apiKey.isEmpty) {
+      emit(MainScreenStateError(
+          appException: const AppException(
+              message: '', code: Constants.errorCodeMissingApiKey)));
+      return;
+    }
     try {
       if (!await isOnline()) {
         emit(MainScreenStateError(

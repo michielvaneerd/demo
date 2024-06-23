@@ -3,6 +3,8 @@ import 'package:funda/domain/entities/house_entity.dart';
 import 'package:funda/domain/entities/list_house_entity.dart';
 import 'package:funda/domain/repositories/house_repository.dart';
 
+/// Concrete House repository implementation, the abstract one is defined in the domain layer.
+/// Gets models from the datasource and converts them to entities to be used in the presentation layer.
 class HouseRepositoryImpl implements HouseRepository {
   final HouseDatasource _houseDatasource;
   HouseRepositoryImpl(this._houseDatasource);
