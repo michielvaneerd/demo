@@ -1,0 +1,24 @@
+{
+  "appName": "Funda demo app",
+  "adres": "Adres",
+  "zipCode": "Postcode",
+  "place": "Plaats",
+  "price": "Prijs",
+  "energyLabelWithValue": "Energielabel: {label}",
+  "@energyLabelWithValue": {
+    "placeholders": {
+      "label": {}
+    }
+  },
+  "unknown": "Onbekend",
+  "surfaceWithValue": "{surface} m²",
+  "@surfaceWithValue": {
+    "placeholders": {
+      "surface": {}
+    }
+  },
+  "description": "Omschrijving",
+  "allMedia": "Alle media",
+  "readMore": "Lees meer...",
+  "readLess": "Lees minder..."
+}
