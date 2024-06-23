@@ -64,10 +64,7 @@ class MainScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(myLoc(context).appName),
         ),
-        body: BlocConsumer<MainScreenCubit, MainScreenState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
+        body: BlocBuilder<MainScreenCubit, MainScreenState>(
           builder: (context, state) {
             return _getWidget(state);
           },
