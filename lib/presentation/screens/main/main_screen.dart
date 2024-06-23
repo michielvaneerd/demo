@@ -39,7 +39,9 @@ class MainScreen extends StatelessWidget {
                     house.mainPhoto,
                     fit: BoxFit.fill,
                     errorBuilder: (context, error, stackTrace) =>
-                        const Placeholder(),
+                        const Placeholder(
+                      fallbackHeight: 200,
+                    ),
                   ),
                   TextRow(text: house.addess),
                   TextRow(

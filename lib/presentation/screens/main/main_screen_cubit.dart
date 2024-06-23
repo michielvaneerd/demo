@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:funda/core/app_exception.dart';
+import 'package:funda/core/constants.dart';
+import 'package:funda/core/helpers.dart';
 import 'package:funda/domain/entities/list_house_entity.dart';
 import 'package:funda/domain/use_cases/house_use_cases.dart';
 
@@ -33,8 +35,14 @@ class MainScreenCubit extends Cubit<MainScreenState> {
 
   void getHouses() async {
     try {
-      final houses = await _houseUseCases.getHouses();
-      emit(MainScreenStateSuccess(houses: houses));
+      if (!await isOnline()) {
+        emit(MainScreenStateError(
+            appException: const AppException(
+                message: '', code: Constants.errorCodeConnection)));
+      } else {
+        final houses = await _houseUseCases.getHouses();
+        emit(MainScreenStateSuccess(houses: houses));
+      }
     } on Exception catch (ex) {
       emit(MainScreenStateError(appException: AppException.fromException(ex)));
     }

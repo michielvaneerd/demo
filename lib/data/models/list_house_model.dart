@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:funda/domain/entities/list_house_entity.dart';
+import 'package:xml/xml.dart';
 
 class ListHouseModel extends Equatable {
   final String id;
@@ -19,6 +20,18 @@ class ListHouseModel extends Equatable {
         place: place,
         zipCode: zipCode,
         price: price);
+  }
+
+  factory ListHouseModel.fromXMlElement(XmlElement el) {
+    return ListHouseModel(
+        id: el.getElement('Id')!.innerText,
+        offeredSince: el.getElement('AangebodenSindsTekst')!.innerText,
+        addess: el.getElement('Adres')!.innerText,
+        mainPhoto: el.getElement('FotoLarge')!.innerText,
+        place: el.getElement('Woonplaats')!.innerText,
+        zipCode: el.getElement('Postcode')!.innerText,
+        price: int.parse(
+            el.getElement('Prijs')!.getElement('Koopprijs')!.innerText));
   }
 
   const ListHouseModel({

@@ -22,5 +22,6 @@
   "readMore": "Lees meer...",
   "readLess": "Lees minder...",
   "error": "Error",
-  "errorNotFound": "Dit huis konden we helaas niet vinden"
+  "errorNotFound": "Dit huis konden we helaas niet vinden",
+  "noConnectionError": "We kunnen helaas niets tonen, want er is op dit moment geen internet connectie"
 }

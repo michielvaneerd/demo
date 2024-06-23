@@ -41,6 +41,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  xml: ^6.5.0
+  connectivity_plus: ^6.0.3
 
 dev_dependencies:
   flutter_test:
