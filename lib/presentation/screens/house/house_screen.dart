@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:funda/core/constants.dart';
 import 'package:funda/core/helpers.dart';
 import 'package:funda/core/injections.dart';
 import 'package:funda/core/styles.dart';
